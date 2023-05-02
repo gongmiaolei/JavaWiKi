@@ -2,7 +2,7 @@ package com.jiawa.wiki.interceptor;
 
 import com.alibaba.fastjson.JSONObject;
 import com.jiawa.wiki.resp.CommonResp;
-import com.jiawa.wiki.resp.UserLoginResp;
+import com.jiawa.wiki.resp.AdminLoginResp;
 import com.jiawa.wiki.util.LoginUserContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,7 +30,7 @@ public class ActionInterceptor implements HandlerInterceptor {
             return true;
         }
 
-        UserLoginResp userLoginResp = LoginUserContext.getUser();
+        AdminLoginResp userLoginResp = LoginUserContext.getUser();
 //        if ("admin".equals(userLoginResp.getLoginName())) {
         if (true) {
             // admin用户不拦截

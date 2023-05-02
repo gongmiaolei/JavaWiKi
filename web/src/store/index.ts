@@ -1,17 +1,17 @@
 import { createStore } from 'vuex'
 
 declare let SessionStorage: any;
-const USER = "USER";
+const ADMIN = "ADMIN";
 
 const store = createStore({
   state: {
-    user: SessionStorage.get(USER) || {}
+    admin: SessionStorage.get(ADMIN) || {}
   },
   mutations: {
-    setUser (state, user) {
-      console.log("store user：", user);
-      state.user = user;
-      SessionStorage.set(USER, user);
+    setUser (state, admin) {
+      console.log("store user：", admin);
+      state.admin = admin;
+      SessionStorage.set(ADMIN, admin);
     }
   },
   actions: {

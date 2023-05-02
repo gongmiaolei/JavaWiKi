@@ -1,6 +1,6 @@
 <template>
   <a-layout-footer style="text-align: center">
-    淼磊电子书<span v-show="user.id">，欢迎：{{user.name}}</span>
+    淼磊电子书<span v-show="admin.id">，欢迎：{{admin.name}}</span>
   </a-layout-footer>
 </template>
 
@@ -13,7 +13,7 @@
   export default defineComponent({
     name: 'the-footer',
     setup() {
-      const user = computed(() => store.state.user);
+      const admin = computed(() => store.state.admin);
 
       let websocket: any;
       let token: any;
@@ -60,7 +60,7 @@
       });
 
       return {
-        user
+        admin
       }
     }
   });

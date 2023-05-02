@@ -3,7 +3,7 @@ package com.jiawa.wiki.req;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
-public class UserSaveReq {
+public class AdminSaveReq {
     private Long id;
 
     @NotNull(message = "【用户名】不能为空")

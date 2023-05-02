@@ -24,7 +24,7 @@
       <a-table
           :columns="columns"
           :row-key="record => record.id"
-          :data-source="users"
+          :data-source="admins"
           :pagination="pagination"
           :loading="loading"
           @change="handleTableChange"
@@ -59,15 +59,15 @@
       :confirm-loading="modalLoading"
       @ok="handleModalOk"
   >
-    <a-form :model="user" :label-col="{ span: 6 }" :wrapper-col="{ span: 18 }">
+    <a-form :model="admin" :label-col="{ span: 6 }" :wrapper-col="{ span: 18 }">
       <a-form-item label="登陆名">
-        <a-input v-model:value="user.loginName" :disabled="!!user.id"/>
+        <a-input v-model:value="admin.loginName" :disabled="!!admin.id"/>
       </a-form-item>
       <a-form-item label="昵称">
-        <a-input v-model:value="user.name"/>
+        <a-input v-model:value="admin.name"/>
       </a-form-item>
-      <a-form-item label="密码" v-show="!user.id">
-        <a-input v-model:value="user.password"/>
+      <a-form-item label="密码" v-show="!admin.id">
+        <a-input v-model:value="admin.password"/>
       </a-form-item>
     </a-form>
   </a-modal>
@@ -78,9 +78,9 @@
       :confirm-loading="resetModalLoading"
       @ok="handleResetModalOk"
   >
-    <a-form :model="user" :label-col="{ span: 6 }" :wrapper-col="{ span: 18 }">
+    <a-form :model="admin" :label-col="{ span: 6 }" :wrapper-col="{ span: 18 }">
       <a-form-item label="新密码">
-        <a-input v-model:value="user.password"/>
+        <a-input v-model:value="admin.password"/>
       </a-form-item>
     </a-form>
   </a-modal>
@@ -111,7 +111,7 @@ export default defineComponent({
   setup() {
     const param = ref();
     param.value = {};
-    const users = ref();
+    const admins = ref();
     const pagination = ref({
       current: 1,
       pageSize: 10,
@@ -145,8 +145,8 @@ export default defineComponent({
     const handleQuery = (params: any) => {
       loading.value = true;
       // 如果不清空现有数据，则编辑保存重新加载数据后，再点编辑，则列表显示的还是编辑前的数据
-      users.value = [];
-      axios.get("/user/list", {
+      admins.value = [];
+      axios.get("/admin/list", {
         params: {
           page: params.page,
           size: params.size,
@@ -156,7 +156,7 @@ export default defineComponent({
         loading.value = false;
         const data = response.data;
         if (data.success) {
-          users.value = data.content.list;
+          admins.value = data.content.list;
 
           // 重置分页按钮
           pagination.value.current = params.page;
@@ -179,15 +179,15 @@ export default defineComponent({
     };
 
     // -------- 表单 ---------
-    const user = ref();
+    const admin = ref();
     const modalVisible = ref(false);
     const modalLoading = ref(false);
     const handleModalOk = () => {
       modalLoading.value = true;
 
-      user.value.password = hexMd5(user.value.password + KEY);
+      admin.value.password = hexMd5(admin.value.password + KEY);
 
-      axios.post("/user/save", user.value).then((response) => {
+      axios.post("/admin/save", admin.value).then((response) => {
         modalLoading.value = false;
         const data = response.data; // data = commonResp
         if (data.success) {
@@ -209,7 +209,7 @@ export default defineComponent({
      */
     const edit = (record: any) => {
       modalVisible.value = true;
-      user.value = Tool.copy(record);
+      admin.value = Tool.copy(record);
     };
 
     /**
@@ -217,11 +217,11 @@ export default defineComponent({
      */
     const add = () => {
       modalVisible.value = true;
-      user.value = {};
+      admin.value = {};
     };
 
     const handleDelete = (id: number) => {
-      axios.delete("/user/delete/" + id).then((response) => {
+      axios.delete("/admin/delete/" + id).then((response) => {
         const data = response.data; // data = commonResp
         if (data.success) {
           // 重新加载列表
@@ -241,9 +241,9 @@ export default defineComponent({
     const handleResetModalOk = () => {
       resetModalLoading.value = true;
 
-      user.value.password = hexMd5(user.value.password + KEY);
+      admin.value.password = hexMd5(admin.value.password + KEY);
 
-      axios.post("/user/reset-password", user.value).then((response) => {
+      axios.post("/admin/reset-password", admin.value).then((response) => {
         resetModalLoading.value = false;
         const data = response.data; // data = commonResp
         if (data.success) {
@@ -265,8 +265,8 @@ export default defineComponent({
      */
     const resetPassword = (record: any) => {
       resetModalVisible.value = true;
-      user.value = Tool.copy(record);
-      user.value.password = null;
+      admin.value = Tool.copy(record);
+      admin.value.password = null;
     };
 
     onMounted(() => {
@@ -278,7 +278,7 @@ export default defineComponent({
 
     return {
       param,
-      users,
+      admins,
       pagination,
       columns,
       loading,
@@ -288,7 +288,7 @@ export default defineComponent({
       edit,
       add,
 
-      user,
+      admin,
       modalVisible,
       modalLoading,
       handleModalOk,

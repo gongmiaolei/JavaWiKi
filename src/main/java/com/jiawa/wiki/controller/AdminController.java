@@ -1,15 +1,15 @@
 package com.jiawa.wiki.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.jiawa.wiki.req.UserLoginReq;
-import com.jiawa.wiki.req.UserQueryReq;
-import com.jiawa.wiki.req.UserResetPasswordReq;
-import com.jiawa.wiki.req.UserSaveReq;
+import com.jiawa.wiki.req.AdminLoginReq;
+import com.jiawa.wiki.req.AdminQueryReq;
+import com.jiawa.wiki.req.AdminResetPasswordReq;
+import com.jiawa.wiki.req.AdminSaveReq;
 import com.jiawa.wiki.resp.CommonResp;
 import com.jiawa.wiki.resp.PageResp;
-import com.jiawa.wiki.resp.UserLoginResp;
-import com.jiawa.wiki.resp.UserQueryResp;
-import com.jiawa.wiki.service.UserService;
+import com.jiawa.wiki.resp.AdminLoginResp;
+import com.jiawa.wiki.resp.AdminQueryResp;
+import com.jiawa.wiki.service.AdminService;
 import com.jiawa.wiki.util.SnowFlake;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,13 +22,13 @@ import javax.validation.Valid;
 import java.util.concurrent.TimeUnit;
 
 @RestController
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/admin")
+public class AdminController {
 
-    private static final Logger LOG = LoggerFactory.getLogger(UserController.class);
+    private static final Logger LOG = LoggerFactory.getLogger(AdminController.class);
 
     @Resource
-    private UserService userService;
+    private AdminService adminService;
 
     @Resource
     private SnowFlake snowFlake;
@@ -37,48 +37,48 @@ public class UserController {
     private RedisTemplate redisTemplate;
 
     @GetMapping("/list")
-    public CommonResp list(@Valid UserQueryReq req) {
-        CommonResp<PageResp<UserQueryResp>> resp = new CommonResp<>();
-        PageResp<UserQueryResp> list = userService.list(req);
+    public CommonResp list(@Valid AdminQueryReq req) {
+        CommonResp<PageResp<AdminQueryResp>> resp = new CommonResp<>();
+        PageResp<AdminQueryResp> list = adminService.list(req);
         resp.setContent(list);
         return resp;
     }
 
     @PostMapping("/save")
-    public CommonResp save(@Valid @RequestBody UserSaveReq req) {
+    public CommonResp save(@Valid @RequestBody AdminSaveReq req) {
         req.setPassword(DigestUtils.md5DigestAsHex(req.getPassword().getBytes()));
         CommonResp resp = new CommonResp<>();
-        userService.save(req);
+        adminService.save(req);
         return resp;
     }
 
     @DeleteMapping("/delete/{id}")
     public CommonResp delete(@PathVariable Long id) {
         CommonResp resp = new CommonResp<>();
-        userService.delete(id);
+        adminService.delete(id);
         return resp;
     }
 
     @PostMapping("/reset-password")
-    public CommonResp resetPassword(@Valid @RequestBody UserResetPasswordReq req) {
+    public CommonResp resetPassword(@Valid @RequestBody AdminResetPasswordReq req) {
         req.setPassword(DigestUtils.md5DigestAsHex(req.getPassword().getBytes()));
         CommonResp resp = new CommonResp<>();
-        userService.resetPassword(req);
+        adminService.resetPassword(req);
         return resp;
     }
 
     @PostMapping("/login")
-    public CommonResp login(@Valid @RequestBody UserLoginReq req) {
+    public CommonResp login(@Valid @RequestBody AdminLoginReq req) {
         req.setPassword(DigestUtils.md5DigestAsHex(req.getPassword().getBytes()));
-        CommonResp<UserLoginResp> resp = new CommonResp<>();
-        UserLoginResp userLoginResp = userService.login(req);
+        CommonResp<AdminLoginResp> resp = new CommonResp<>();
+        AdminLoginResp adminLoginResp = adminService.login(req);
 
         Long token = snowFlake.nextId();
         LOG.info("生成单点登录token：{}，并放入redis中", token);
-        userLoginResp.setToken(token.toString());
-        redisTemplate.opsForValue().set(token.toString(), JSONObject.toJSONString(userLoginResp), 3600 * 24, TimeUnit.SECONDS);
+        adminLoginResp.setToken(token.toString());
+        redisTemplate.opsForValue().set(token.toString(), JSONObject.toJSONString(adminLoginResp), 3600 * 24, TimeUnit.SECONDS);
 
-        resp.setContent(userLoginResp);
+        resp.setContent(adminLoginResp);
         return resp;
     }
 

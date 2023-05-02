@@ -1,15 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="544b1c27-2b5e-4a0b-9e13-0a18d451c0b5" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/http/test.http" beforeDir="false" afterPath="$PROJECT_DIR$/http/test.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiawa/wiki/config/SpringMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiawa/wiki/config/SpringMvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiawa/wiki/config/WikiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiawa/wiki/config/WikiApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiawa/wiki/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiawa/wiki/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiawa/wiki/domain/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiawa/wiki/domain/UserExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiawa/wiki/interceptor/ActionInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiawa/wiki/interceptor/ActionInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiawa/wiki/interceptor/LoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiawa/wiki/interceptor/LoginInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiawa/wiki/mapper/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiawa/wiki/req/UserLoginReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiawa/wiki/req/AdminLoginReq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiawa/wiki/req/UserQueryReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiawa/wiki/req/AdminQueryReq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiawa/wiki/req/UserResetPasswordReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiawa/wiki/req/AdminResetPasswordReq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiawa/wiki/req/UserSaveReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiawa/wiki/req/AdminSaveReq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiawa/wiki/resp/UserLoginResp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiawa/wiki/resp/AdminLoginResp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiawa/wiki/resp/UserQueryResp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiawa/wiki/resp/AdminQueryResp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiawa/wiki/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiawa/wiki/service/AdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiawa/wiki/util/LoginUserContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiawa/wiki/util/LoginUserContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/generator/generator-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generator/generator-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/generator/generator-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/generator/generator-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/the-footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/the-footer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/the-header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/the-header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/router/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/store/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/views/admin/admin-user.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/views/admin/admin-user.vue" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2P7uxPnvUyFsfcpAleoW4PNZOi6" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/web/node_modules/typescript/lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.jiawa.wiki.service" />
+      <recent name="com.jiawa.wiki.controller" />
+    </key>
   </component>
   <component name="RunManager" selected="Spring Boot.WikiApplication">
+    <configuration name="test | #6" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/http/test.http" index="6" requestIdentifier="#6" runType="运行单个请求">
+      <method v="2" />
+    </configuration>
+    <configuration name="mybatis-generator" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="mybatis-generator:generate" />
+                <option value="-e" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
     <configuration name="WikiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="wiki" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.jiawa.wiki.config.WikiApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -24,10 +132,43 @@
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Maven.mybatis-generator" />
+      <item itemvalue="npm.serve-dev" />
+      <item itemvalue="Spring Boot.WikiApplication" />
+      <item itemvalue="HTTP 请求.test | #6" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="npm.serve-dev" />
+        <item itemvalue="HTTP 请求.test | #6" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="544b1c27-2b5e-4a0b-9e13-0a18d451c0b5" name="变更" comment="" />
+      <created>1682820687600</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1682820687600</updated>
+      <workItem from="1682820690583" duration="14985000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

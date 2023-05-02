@@ -16,7 +16,7 @@ axios.defaults.baseURL = process.env.VUE_APP_SERVER;
  */
 axios.interceptors.request.use(function (config) {
   console.log('请求参数：', config);
-  const token = store.state.user.token;
+  const token = store.state.admin.token;
   if (Tool.isNotEmpty(token)) {
     config.headers.token = token;
     console.log("请求headers增加token:", token);

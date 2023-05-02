@@ -13,7 +13,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 // @ComponentScan({"com.jiawa", "com.test"})
 @ComponentScan("com.jiawa")
 @SpringBootApplication
-@MapperScan("com.jiawa.wiki.mapper")
+@MapperScan("com.jiawa.wiki.mapper")//扫描此包下的接口，交给mybatis管理
 @EnableScheduling
 @EnableAsync
 public class WikiApplication {

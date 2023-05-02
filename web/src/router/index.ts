@@ -30,7 +30,7 @@ const routes: Array<RouteRecordRaw> = [
     // component: () => import(/* webpackChunkName: "about" */ '../views/about.vue')
   },
   {
-    path: '/admin/user',
+    path: '/admin/admin',
     name: 'AdminUser',
     component: AdminUser,
     meta: {
@@ -75,7 +75,7 @@ router.beforeEach((to, from, next) => {
     console.log(item, "是否需要登录校验：", item.meta.loginRequire);
     return item.meta.loginRequire
   })) {
-    const loginUser = store.state.user;
+    const loginUser = store.state.admin;
     if (Tool.isEmpty(loginUser)) {
       console.log("用户未登录！");
       next('/');

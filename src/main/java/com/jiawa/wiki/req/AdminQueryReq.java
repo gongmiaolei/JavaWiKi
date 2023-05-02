@@ -1,6 +1,6 @@
 package com.jiawa.wiki.req;
 
-public class UserQueryReq extends PageReq {
+public class AdminQueryReq extends PageReq {
 
     private String loginName;
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jiawa.wiki.mapper.UserMapper">
-  <resultMap id="BaseResultMap" type="com.jiawa.wiki.domain.User">
+<mapper namespace="com.jiawa.wiki.mapper.AdminMapper">
+  <resultMap id="BaseResultMap" type="com.jiawa.wiki.domain.Admin">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="login_name" jdbcType="VARCHAR" property="loginName" />
     <result column="name" jdbcType="VARCHAR" property="name" />
@@ -68,13 +68,13 @@
   <sql id="Base_Column_List">
     id, login_name, `name`, `password`
   </sql>
-  <select id="selectByExample" parameterType="com.jiawa.wiki.domain.UserExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.jiawa.wiki.domain.AdminExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from user
+    from admin
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -85,27 +85,27 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from user
+    from admin
     where id = #{id,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from user
+    delete from admin
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.jiawa.wiki.domain.UserExample">
-    delete from user
+  <delete id="deleteByExample" parameterType="com.jiawa.wiki.domain.AdminExample">
+    delete from admin
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.jiawa.wiki.domain.User">
-    insert into user (id, login_name, `name`, 
+  <insert id="insert" parameterType="com.jiawa.wiki.domain.Admin">
+    insert into admin (id, login_name, `name`, 
       `password`)
     values (#{id,jdbcType=BIGINT}, #{loginName,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
       #{password,jdbcType=CHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.jiawa.wiki.domain.User">
-    insert into user
+  <insert id="insertSelective" parameterType="com.jiawa.wiki.domain.Admin">
+    insert into admin
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
@@ -135,14 +135,14 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.jiawa.wiki.domain.UserExample" resultType="java.lang.Long">
-    select count(*) from user
+  <select id="countByExample" parameterType="com.jiawa.wiki.domain.AdminExample" resultType="java.lang.Long">
+    select count(*) from admin
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update user
+    update admin
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=BIGINT},
@@ -162,7 +162,7 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update user
+    update admin
     set id = #{record.id,jdbcType=BIGINT},
       login_name = #{record.loginName,jdbcType=VARCHAR},
       `name` = #{record.name,jdbcType=VARCHAR},
@@ -171,8 +171,8 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.jiawa.wiki.domain.User">
-    update user
+  <update id="updateByPrimaryKeySelective" parameterType="com.jiawa.wiki.domain.Admin">
+    update admin
     <set>
       <if test="loginName != null">
         login_name = #{loginName,jdbcType=VARCHAR},
@@ -186,8 +186,8 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.jiawa.wiki.domain.User">
-    update user
+  <update id="updateByPrimaryKey" parameterType="com.jiawa.wiki.domain.Admin">
+    update admin
     set login_name = #{loginName,jdbcType=VARCHAR},
       `name` = #{name,jdbcType=VARCHAR},
       `password` = #{password,jdbcType=CHAR}

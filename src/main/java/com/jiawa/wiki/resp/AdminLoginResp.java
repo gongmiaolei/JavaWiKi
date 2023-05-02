@@ -1,6 +1,6 @@
 package com.jiawa.wiki.resp;
 
-public class UserLoginResp {
+public class AdminLoginResp {
     private Long id;
 
     private String loginName;
